@@ -32,7 +32,7 @@ Makefile*
 *.qm
 *.prl
 
-QtToUI/build/
+QtTodoUI/build/
 
 # Qt unit tests
 target_wrapper.*
