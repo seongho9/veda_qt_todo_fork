@@ -23,6 +23,15 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(QtTodoUI
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        button.h button.cpp button.ui
+        head.h head.cpp head.ui
+        #finishtodotab.h finishtodotab.cpp finishtodotab.ui
+        #finishenabletab.h finishenabletab.cpp finishenabletab.ui
+        inputwidget.h inputwidget.cpp inputwidget.ui
+        calendardialog.h calendardialog.cpp
+
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET QtTodoUI APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
