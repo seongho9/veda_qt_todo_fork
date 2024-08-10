@@ -12,6 +12,8 @@ InputWidget::InputWidget(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->calendar->setIcon(":/icons/calender.png");
+    ui->submit->setIcon(":/icons/submit.png");
     connect(
         dynamic_cast<QLineEdit*>(ui->input),
         &QLineEdit::textChanged,
@@ -43,6 +45,15 @@ InputWidget::InputWidget(QWidget *parent)
             ui->input->clear();
         }
     });
+}
+
+void InputWidget::setInput(QString input)
+{
+    this->input = input;
+}
+void InputWidget::setDue(QString due)
+{
+    this->due = due;
 }
 InputWidget::~InputWidget()
 {

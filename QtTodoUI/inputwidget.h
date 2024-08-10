@@ -14,7 +14,8 @@ class InputWidget : public QWidget
 public:
     explicit InputWidget(QWidget *parent = nullptr);
     ~InputWidget();
-
+    void setInput(QString input);
+    void setDue(QString due);
 private:
     Ui::InputWidget *ui;
     QString input;
