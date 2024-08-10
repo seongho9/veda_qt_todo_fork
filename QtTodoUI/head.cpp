@@ -10,26 +10,21 @@ Head::Head(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->save->setIcon(":/icons/save.png");
+    ui->load->setIcon(":/icons/download.png");
+    ui->logout->setIcon(":/icons/logout.png");
     timer = new QTimer();
 
     ui->label_2->setText(getCurrentDateTime());
     //  10sec
-    timer->setInterval(10000);
+    timer->setInterval(1000);
     connect(timer, &QTimer::timeout,
-            [&](){  ui->label_2->setText(getCurrentDateTime()); });
-
-    connect(
-        dynamic_cast<QPushButton*>(ui->save),
-        &QPushButton::clicked,
-        [&](){  emit save();    });
-    connect(
-        dynamic_cast<QPushButton*>(ui->load),
-        &QPushButton::clicked,
-        [&](){  emit load();    });
-    connect(
-        dynamic_cast<QPushButton*>(ui->logout),
-        &QPushButton::clicked,
-        [&](){  emit logout();  });
+            [&](){
+                ui->label_2->setText(getCurrentDateTime());
+    });
+    ui->save->setClick([&](){ emit save(); qDebug()<<"s"; });
+    ui->load->setClick([&](){ emit load(); qDebug()<<"load";});
+    ui->logout->setClick([&](){ emit logout(); qDebug()<<"log";});
 }
 
 Head::~Head()
