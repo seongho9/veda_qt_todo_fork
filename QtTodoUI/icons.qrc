@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/calender.png</file>
+        <file>icons/delete.png</file>
+        <file>icons/download.png</file>
+        <file>icons/edit.png</file>
+        <file>icons/logout.png</file>
+        <file>icons/submit.png</file>
+        <file>icons/save.png</file>
+    </qresource>
+</RCC>

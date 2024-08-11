@@ -74,10 +74,20 @@
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);
-border-color: rgb(255, 255, 255);</string>
+border-color: rgb(255, 255, 255);
+color: rgb(43, 43, 43);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
        </property>
       </widget>
      </item>

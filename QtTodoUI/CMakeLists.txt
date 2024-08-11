@@ -30,10 +30,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         todoitem.h todoitem.cpp todoitem.ui
         button.h button.cpp button.ui
         head.h head.cpp head.ui
-        #finishtodotab.h finishtodotab.cpp finishtodotab.ui
-        #finishenabletab.h finishenabletab.cpp finishenabletab.ui
+        finishtodotab.h finishtodotab.cpp finishtodotab.ui
+        finishenabletab.h finishenabletab.cpp finishenabletab.ui
         inputwidget.h inputwidget.cpp inputwidget.ui
         calendardialog.h calendardialog.cpp
+        mainwindow.h mainwindow.cpp mainwindow.ui
+        centeralcontent.h centeralcontent.cpp centeralcontent.ui
+        icons.qrc
 
 
 
