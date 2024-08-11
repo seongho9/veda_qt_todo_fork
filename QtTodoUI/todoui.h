@@ -16,6 +16,7 @@ class TodoUI : public QWidget
 public:
     TodoUI(QWidget *parent = nullptr);
     ~TodoUI();
+    void setsize();
 
 private:
     Ui::TodoUI *ui;

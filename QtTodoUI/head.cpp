@@ -13,10 +13,12 @@ Head::Head(QWidget *parent)
     ui->save->setIcon(":/icons/save.png");
     ui->load->setIcon(":/icons/download.png");
     ui->logout->setIcon(":/icons/logout.png");
+
     timer = new QTimer();
 
     ui->label_2->setText(getCurrentDateTime());
     //  10sec
+
     timer->setInterval(1000);
     connect(timer, &QTimer::timeout,
             [&](){

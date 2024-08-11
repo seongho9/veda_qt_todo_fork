@@ -17,12 +17,17 @@ set(PROJECT_SOURCES
         todoui.cpp
         todoui.h
         todoui.ui
+        todoitem.cpp
+        todoitem.h
+        todoitem.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(QtTodoUI
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        button.cpp button.h button.ui
+        todoitem.h todoitem.cpp todoitem.ui
         button.h button.cpp button.ui
         head.h head.cpp head.ui
         finishtodotab.h finishtodotab.cpp finishtodotab.ui
