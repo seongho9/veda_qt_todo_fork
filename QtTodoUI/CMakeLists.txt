@@ -22,12 +22,12 @@ set(PROJECT_SOURCES
         todoitem.ui
 )
 
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(QtTodoUI
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         button.cpp button.h button.ui
-        todoitem.h todoitem.cpp todoitem.ui
         button.h button.cpp button.ui
         head.h head.cpp head.ui
         finishtodotab.h finishtodotab.cpp finishtodotab.ui
@@ -37,10 +37,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         mainwindow.h mainwindow.cpp mainwindow.ui
         centeralcontent.h centeralcontent.cpp centeralcontent.ui
         icons.qrc
-
-
-
+        todoitem.h todoitem.cpp todoitem.ui
     )
+    # qt_add_executable(QtTodoUI MANUAL_FINALIZATION icons.qrc src ui include main.cpp)
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET QtTodoUI APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
