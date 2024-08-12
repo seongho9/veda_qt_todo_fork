@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     centeralContent = new CenteralContent(this);
 
+
     this->setCentralWidget(centeralContent);
 
 

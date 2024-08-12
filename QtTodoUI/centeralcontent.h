@@ -2,7 +2,7 @@
 #define CENTERALCONTENT_H
 
 #include <QWidget>
-
+#include "todoui.h"
 namespace Ui {
 class CenteralContent;
 }
