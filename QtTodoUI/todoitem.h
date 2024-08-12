@@ -14,6 +14,7 @@ public:
     explicit TodoItem(QWidget *parent = nullptr);
     TodoItem(const TodoItem& obj) = delete;
     TodoItem& operator=(const TodoItem&) = delete;
+
     void setDueDate(QString dueDate);
     void setContent(QString content);
     void setIsFinish(bool isFinish);
