@@ -2,6 +2,9 @@
 #define TODOUI_H
 
 #include <QWidget>
+#include "todoitem.h"
+#include <QVector>
+#include <memory>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -14,11 +17,12 @@ class TodoUI : public QWidget
     Q_OBJECT
 
 public:
-    TodoUI(QWidget *parent = nullptr);
+    explicit TodoUI(QWidget *parent = nullptr);
+    void showTodoList(const QVector<std::shared_ptr<TodoItem>> &todoList);
     ~TodoUI();
-    void setsize();
 
 private:
     Ui::TodoUI *ui;
+    QVector<std::shared_ptr<TodoItem>> v;
 };
 #endif // TODOUI_H

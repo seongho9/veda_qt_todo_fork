@@ -5,10 +5,11 @@
 #include <QDockWidget>
 #include <QTabWidget>
 #include <QToolBar>
-
 #include "inputwidget.h"
 #include "head.h"
 #include "centeralcontent.h"
+#include "todoui.h"
+#include "todoitem.h"
 
 namespace Ui {
 class MainWindow;
@@ -28,7 +29,7 @@ private:
     Head* head;
 
     CenteralContent* centeralContent;
-
+    TodoUI* todoui_list;
     InputWidget* inputWidget;
     QDockWidget* inputDock;
 

@@ -38,14 +38,6 @@ TodoItem::TodoItem(QWidget *parent)
     ui->dueDate->setText("");
 }
 
-TodoItem::TodoItem(TodoItem& obj)
-{
-    this->content = obj.content;
-    this->dueDate = obj.dueDate;
-    this->isDone = obj.isDone;
-    this->isFinish = obj.isFinish;
-}
-
 void TodoItem::setDueDate(QString dueDate)
 {
     this->dueDate=dueDate;
@@ -73,6 +65,9 @@ void TodoItem::setIsDone(bool isDone)
     else{
         emit checked(false);
     }
+}
+
+
 TodoItem::~TodoItem()
 {
     delete ui;
