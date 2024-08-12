@@ -28,7 +28,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         button.cpp button.h button.ui
-        button.h button.cpp button.ui
         head.h head.cpp head.ui
         finishtodotab.h finishtodotab.cpp finishtodotab.ui
         finishenabletab.h finishenabletab.cpp finishenabletab.ui

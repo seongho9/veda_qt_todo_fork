@@ -73,7 +73,6 @@ void TodoItem::setIsDone(bool isDone)
     else{
         emit checked(false);
     }
-}
 TodoItem::~TodoItem()
 {
     delete ui;

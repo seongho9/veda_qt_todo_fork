@@ -30,6 +30,7 @@ private:
 signals:
     void checked(bool flag);
     void edit(QString content, QString date);
+
 };
 
 #endif // TODOITEM_H
