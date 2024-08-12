@@ -7,5 +7,7 @@
         <file>icons/logout.png</file>
         <file>icons/submit.png</file>
         <file>icons/save.png</file>
+        <file>icons/check_done.png</file>
+        <file>icons/check_dur.png</file>
     </qresource>
 </RCC>

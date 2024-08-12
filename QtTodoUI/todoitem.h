@@ -1,29 +1,36 @@
 #ifndef TODOITEM_H
 #define TODOITEM_H
 
-#include <QFrame>
-#include <vector>
+#include <QWidget>
 namespace Ui {
 class TodoItem;
 }
 
-class TodoItem : public QFrame
+class TodoItem : public QWidget
 {
     Q_OBJECT
 
 public:
     explicit TodoItem(QWidget *parent = nullptr);
-    void setDueDate(QString DueDate);
-    void setContent(QString Content);
-    void LEDBlink();
-    void VectorAdd();
+    TodoItem(TodoItem& obj);
+    void setDueDate(QString dueDate);
+    void setContent(QString content);
+    void setIsFinish(bool isFinish);
+    void setIsDone(bool isDone);
     ~TodoItem();
 
 private:
     Ui::TodoItem *ui;
-    vector<TodoItem> DataList;
-    QString DueDate;
-    QString Contents;
+
+    QString dueDate;
+    QString content;
+    bool isFinish;
+    bool isDone;
+
+signals:
+    void checked(bool flag);
+    void edit(QString content, QString date);
+
 };
 
 #endif // TODOITEM_H
