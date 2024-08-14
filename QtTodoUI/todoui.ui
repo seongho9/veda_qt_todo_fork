@@ -29,7 +29,6 @@
    <string notr="true">
 background-color: rgb(255, 255, 255);</string>
   </property>
-
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
     <number>50</number>
