@@ -5,11 +5,11 @@
 #include <QPushButton>
 #include <QMessageBox>
 
-
 InputWidget::InputWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::InputWidget)
 {
+
     ui->setupUi(this);
 
     ui->calendar->setIcon(":/icons/calender.png");
@@ -31,7 +31,7 @@ InputWidget::InputWidget(QWidget *parent)
             });
         });
 
-    ui->submit->setClick([&](){
+    ui->submit->setClick(this, [&](){
         if(input.isEmpty()){
             QMessageBox::warning(this, "Todo 입력 오류","Todo 내용이 입력되지 않았습니다.",QMessageBox::Ok);
         }
@@ -39,21 +39,40 @@ InputWidget::InputWidget(QWidget *parent)
             QMessageBox::warning(this, "Todo 입력 오류","Todo 마감일이 입력되지 않았습니다.",QMessageBox::Ok);
         }
         else{
-            emit enterPressed(input, due);
+            if(isEdit){
+                qDebug()<<"editddd";
+                emit editPressed(id, userName, input, due);
+            }
+            else{
+                emit enterPressed(userName, input, due);
+            }
             input.clear();
             due.clear();
+            isEdit = false;
             ui->input->clear();
         }
     });
-}
 
+    isEdit = false;
+}
+void InputWidget::setUserName(QString userName)
+{
+    this->userName = userName;
+
+}
 void InputWidget::setInput(QString input)
 {
     this->input = input;
+    ui->input->setText(this->input);
 }
 void InputWidget::setDue(QString due)
 {
     this->due = due;
+}
+void InputWidget::setId(unsigned int id)
+{
+    this->id = id;
+    isEdit=true;
 }
 InputWidget::~InputWidget()
 {

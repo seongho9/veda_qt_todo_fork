@@ -19,9 +19,11 @@ public:
     void setContent(QString content);
     void setIsFinish(bool isFinish);
     void setIsDone(bool isDone);
+    void setId(unsigned int id);
     ~TodoItem();
 
 private:
+    unsigned int id;
     Ui::TodoItem *ui;
     QString dueDate;
     QString content;
@@ -29,8 +31,9 @@ private:
     bool isDone;
 
 signals:
-    void checked(bool flag);
-    void edit(QString content, QString date);
+    void checked(unsigned int id, bool flag);
+    void edit(unsigned int id, QString content, QString date);
+    void remove(unsigned int id);
 
 };
 

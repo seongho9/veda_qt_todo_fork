@@ -7,10 +7,9 @@ CalendarDialog::CalendarDialog()
     submit = new QPushButton(this);
     calendar = new QCalendarWidget(this);
     date = new QDate();
-
     connect(calendar, &QCalendarWidget::clicked,
             [&](QDate param){
-                date->setDate(param.year(), param.month(), param.daysInMonth());
+                date->setDate(param.year(), param.month(), param.day());
         });
     connect(submit, &QPushButton::clicked,
             [&](){

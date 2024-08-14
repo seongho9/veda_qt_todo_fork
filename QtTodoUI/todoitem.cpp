@@ -12,26 +12,20 @@ TodoItem::TodoItem(QWidget *parent)
     ui->remove->setIcon(":/icons/delete.png");
     ui->isDone->setIcon(":/icons/check_done.png");
 
-    connect(this, &TodoItem::checked, ui->isDone,
-            [&](bool flag){
+    ui->isDone->setClick(this, [&](){
+        this->isDone = !(this->isDone);
 
-                QString icon = flag ?
-                    ":/icons/check_done.png" : ":/icons/check_dur.png";
-                qDebug() << icon;
-                ui->isDone->setIcon(icon);
-            });
+        QString icon = isDone ?
+                           ":/icons/check_done.png" : ":/icons/check_dur.png";
+        ui->isDone->setIcon(icon);
 
-
-    ui->isDone->setClick([&](){
-        qDebug() << "done";
-        setIsDone(!(this->isDone));
+        emit checked(this->id, this->isDone);
     });
     ui->edit->setClick([&](){
-        qDebug() << "edit";
-        emit edit(content, dueDate);
+        emit edit(id, content, dueDate);
     });
     ui->remove->setClick([&](){
-        qDebug() << "delete";
+        emit remove(id);
     });
 
     ui->content->setText("");
@@ -49,7 +43,10 @@ void TodoItem::setContent(QString content)
     this->content = content;
     ui->content->setText(content);
 }
-
+void TodoItem::setId(unsigned int id)
+{
+    this->id = id;
+}
 void TodoItem::setIsFinish(bool isFinish)
 {
     this->isFinish = isFinish;
@@ -58,13 +55,9 @@ void TodoItem::setIsFinish(bool isFinish)
 void TodoItem::setIsDone(bool isDone)
 {
     this->isDone = isDone;
-
-    if(isDone){
-        emit checked(true);
-    }
-    else{
-        emit checked(false);
-    }
+    QString icon = isDone ?
+                       ":/icons/check_done.png" : ":/icons/check_dur.png";
+    ui->isDone->setIcon(icon);
 }
 
 

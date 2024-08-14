@@ -3,7 +3,7 @@
 #include <QTimer>
 #include <QDateTime>
 #include <QPushButton>
-
+#include <QInputDialog>
 Head::Head(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Head)
@@ -13,7 +13,7 @@ Head::Head(QWidget *parent)
     ui->save->setIcon(":/icons/save.png");
     ui->load->setIcon(":/icons/download.png");
     ui->logout->setIcon(":/icons/logout.png");
-
+    ui->login->setIcon(":/icons/login.png");
     timer = new QTimer();
 
     ui->label_2->setText(getCurrentDateTime());
@@ -24,11 +24,24 @@ Head::Head(QWidget *parent)
             [&](){
                 ui->label_2->setText(getCurrentDateTime());
     });
-    ui->save->setClick([&](){ emit save(); qDebug()<<"s"; });
-    ui->load->setClick([&](){ emit load(); qDebug()<<"load";});
-    ui->logout->setClick([&](){ emit logout(); qDebug()<<"log";});
+    ui->save->setClick([&](){ emit save(); });
+    ui->load->setClick([&](){ emit load(); });
+    ui->logout->setClick(this, [&](){
+        emit logout();
+    });
+    ui->login->setClick(this, [&](){
+        QString userName;
+        bool ok;
+        userName = QInputDialog::getText(this, "로그인", "유저이름", QLineEdit::Normal, userName, &ok);
+        if(ok && !userName.isEmpty())
+            emit login(userName);
+    });
 }
 
+void Head::setUserLabel(QString name)
+{
+    ui->label->setText(name);
+}
 Head::~Head()
 {
     delete ui;

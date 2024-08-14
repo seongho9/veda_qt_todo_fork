@@ -14,6 +14,7 @@ class Head : public QWidget
 
 public:
     explicit Head(QWidget *parent = nullptr);
+    void setUserLabel(QString name);
     ~Head();
 
 private:
@@ -26,6 +27,7 @@ signals:
     void save();
     void load();
     void logout();
+    void login(QString userName);
 };
 
 #endif // HEAD_H

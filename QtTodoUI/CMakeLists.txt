@@ -29,7 +29,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         button.cpp button.h button.ui
         head.h head.cpp head.ui
-        finishtodotab.h finishtodotab.cpp finishtodotab.ui
         finishenabletab.h finishenabletab.cpp finishenabletab.ui
         inputwidget.h inputwidget.cpp inputwidget.ui
         calendardialog.h calendardialog.cpp
@@ -38,7 +37,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         icons.qrc
         todoitem.h todoitem.cpp todoitem.ui
         todorepoqt.h todorepoqt.cpp
-        CMakeLists.txt
+        todolistwidget.h todolistwidget.cpp todolistwidget.ui
+        DataManage.h DataManage.cpp
+        Todo.h Todo.cpp
+        Todo.cpp Todo.h
+        TodoRepo.h TodpRepoFile.cpp
+        UserTodo.h UserTodo.cpp
+        UserTodoConverter.h UserTodoConverter.cpp
     )
     # qt_add_executable(QtTodoUI MANUAL_FINALIZATION icons.qrc src ui include main.cpp)
 # Define target properties for Android with Qt 6 as:
@@ -49,12 +54,14 @@ else()
     if(ANDROID)
         add_library(QtTodoUI SHARED
             ${PROJECT_SOURCES}
+            todo
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(QtTodoUI
             ${PROJECT_SOURCES}
+            todo
         )
     endif()
 endif()
