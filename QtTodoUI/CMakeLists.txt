@@ -36,6 +36,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         centeralcontent.h centeralcontent.cpp centeralcontent.ui
         icons.qrc
         todoitem.h todoitem.cpp todoitem.ui
+        todorepoqt.h todorepoqt.cpp
         todolistwidget.h todolistwidget.cpp todolistwidget.ui
         DataManage.h DataManage.cpp
         Todo.h Todo.cpp

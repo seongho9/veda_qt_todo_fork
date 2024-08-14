@@ -1,9 +1,11 @@
 #include "centeralcontent.h"
 #include "ui_centeralcontent.h"
 #include "todoui.h"
+
 #include "Todo.h"
 #include <vector>
 CenteralContent::CenteralContent(DataManage* manage, QWidget *parent)
+
     : QWidget(parent)
     , ui(new Ui::CenteralContent)
 {

@@ -22,6 +22,7 @@ class TodoUI : public QWidget
 
 public:
     explicit TodoUI(DataManage* manager, QString userName, QWidget *parent = nullptr);
+
     ~TodoUI();
 
     QString getUserName() const;
@@ -35,6 +36,7 @@ private:
     void loadTodo();
 
     Ui::TodoUI *ui;
+
     bool enabled;
 
     QVector<QListWidgetItem*> finishLayout;
@@ -51,6 +53,7 @@ private:
 
 signals:
     void edit(unsigned int id, QString userName, QString input, QString date);
+
 };
 
 #endif // TODOUI_H

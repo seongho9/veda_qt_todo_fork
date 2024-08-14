@@ -1,3 +1,4 @@
+
 #include <QVBoxLayout>
 #include "mainwindow.h"
 #include "DataManage.h"

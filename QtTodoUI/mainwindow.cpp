@@ -14,7 +14,6 @@ MainWindow::MainWindow(DataManage* manager, QWidget *parent)
     this->setMenuWidget(head);
     this->content = new TodoUI(manager, "", this);
 
-
     this->setCentralWidget(content);
 
 

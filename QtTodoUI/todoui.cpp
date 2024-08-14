@@ -14,6 +14,11 @@ TodoUI::TodoUI(DataManage* manager, QString userName, QWidget *parent)
     this->manager = manager;
     this->userName = userName;
     ui->setupUi(this);
+    auto item1 = std::make_shared<TodoItem>(this);
+    item1->setDueDate("2022-04-05");
+    item1->setContent("Sample Task 1");
+    item1->setIsFinish(true);
+    item1->setIsDone(false);
 
     showTodoList();
 }
