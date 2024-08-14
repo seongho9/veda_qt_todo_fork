@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <property name="leftMargin">
     <number>0</number>
@@ -75,7 +78,7 @@
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);
 border-color: rgb(255, 255, 255);
-color: rgb(43, 43, 43);</string>
+color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
         <string/>

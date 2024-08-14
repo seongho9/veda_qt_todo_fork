@@ -9,5 +9,8 @@
         <file>icons/save.png</file>
         <file>icons/check_done.png</file>
         <file>icons/check_dur.png</file>
+        <file>icons/arrow_down.png</file>
+        <file>icons/arrow_up.png</file>
+        <file>icons/login.png</file>
     </qresource>
 </RCC>

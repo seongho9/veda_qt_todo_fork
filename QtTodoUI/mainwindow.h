@@ -7,9 +7,8 @@
 #include <QToolBar>
 #include "inputwidget.h"
 #include "head.h"
-#include "centeralcontent.h"
 #include "todoui.h"
-#include "todoitem.h"
+#include "DataManage.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,19 +19,20 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(DataManage* manager, QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
 
+    DataManage* manager;
+
     Head* head;
 
-    CenteralContent* centeralContent;
-    TodoUI* todoui_list;
+    TodoUI* content;
     InputWidget* inputWidget;
     QDockWidget* inputDock;
-
+signals:
 
 };
 
