@@ -37,6 +37,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         centeralcontent.h centeralcontent.cpp centeralcontent.ui
         icons.qrc
         todoitem.h todoitem.cpp todoitem.ui
+        todorepoqt.h todorepoqt.cpp
+        CMakeLists.txt
     )
     # qt_add_executable(QtTodoUI MANUAL_FINALIZATION icons.qrc src ui include main.cpp)
 # Define target properties for Android with Qt 6 as:
